@@ -40,7 +40,7 @@ if (isset($_GET["st"])) {
 					<html>
 						<head>
 							<meta charset="UTF-8">
-							<title>Ecommerce</title>
+							<title>Cannabis Shop</title>
 							<link rel="stylesheet" href="css/bootstrap.min.css"/>
 							<script src="js/jquery2.js"></script>
 							<script src="js/bootstrap.min.js"></script>
@@ -53,7 +53,7 @@ if (isset($_GET["st"])) {
 						<div class="navbar navbar-inverse navbar-fixed-top">
 							<div class="container-fluid">	
 								<div class="navbar-header">
-									<a href="#" class="navbar-brand">Ecommerce</a>
+									<a href="#" class="navbar-brand">Cannabis Shop</a>
 								</div>
 								<ul class="nav navbar-nav">
 									<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
@@ -74,10 +74,10 @@ if (isset($_GET["st"])) {
 										<div class="panel-body">
 											<h1>Thankyou </h1>
 											<hr/>
-											<p>Hello <?php echo "<b>".$_SESSION["name"]."</b>"; ?>,Your payment process is 
-											successfully completed and your Transaction id is <b><?php echo $trx_id; ?></b><br/>
-											you can continue your Shopping <br/></p>
-											<a href="index.php" class="btn btn-success btn-lg">Continue Shopping</a>
+											<p>Hello <?php echo "<b>".$_SESSION["name"]."</b>"; ?>,Thanh toán thành công,
+											Mã đơn hàng là <b><?php echo $trx_id; ?></b><br/>
+											Mời bạn tiếp tục mua sắm <br/></p>
+											<a href="index.php" class="btn btn-success btn-lg">Mua sắm tiếp</a>
 										</div>
 										<div class="panel-footer"></div>
 									</div>

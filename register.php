@@ -20,7 +20,7 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		
 		echo "
 			<div class='alert alert-warning'>
-				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b>PLease Fill all fields..!</b>
+				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b>Hãy điền đủ thông tin !!!</b>
 			</div>
 		";
 		exit();
@@ -29,7 +29,7 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		echo "
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>this $f_name is not valid..!</b>
+				<b>Tên $f_name không phù hợp !</b>
 			</div>
 		";
 		exit();
@@ -38,7 +38,7 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		echo "
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>this $l_name is not valid..!</b>
+				<b>Họ $l_name không phù hợp !</b>
 			</div>
 		";
 		exit();
@@ -47,42 +47,43 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		echo "
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>this $email is not valid..!</b>
+				<b>Email $email không phù hợp !</b>
 			</div>
 		";
 		exit();
 	}
-	if(strlen($password) < 9 ){
+	if(strlen($password) < 6 ){
 		echo "
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>Password is weak</b>
+				<b>Mật khẩu phải tối thiểu 6 kí tự!</b>
 			</div>
 		";
 		exit();
 	}
-	if(strlen($repassword) < 9 ){
-		echo "
-			<div class='alert alert-warning'>
-				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>Password is weak</b>
-			</div>
-		";
-		exit();
-	}
+	// if(strlen($repassword) < 9 ){
+	// 	echo "
+	// 		<div class='alert alert-warning'>
+	// 			<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+	// 			<b>Mật khẩu yếu</b>
+	// 		</div>
+	// 	";
+	// 	exit();
+	// }
 	if($password != $repassword){
 		echo "
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>password is not same</b>
+				<b>Mật khẩu phải trùng</b>
 			</div>
 		";
+		exit();
 	}
 	if(!preg_match($number,$mobile)){
 		echo "
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>Mobile number $mobile is not valid</b>
+				<b>Số điện thoại $mobile không phù hợp !</b>
 			</div>
 		";
 		exit();
@@ -91,7 +92,7 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		echo "
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>Mobile number must be 10 digit</b>
+				<b>Số điện thoại phải đủ 10 số !</b>
 			</div>
 		";
 		exit();
@@ -104,7 +105,7 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		echo "
 			<div class='alert alert-danger'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>Email Address is already available Try Another email address</b>
+				<b>Email này đã được đăng kí, hãy nhập email khác !!!</b>
 			</div>
 		";
 		exit();
@@ -121,7 +122,7 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		$ip_add = getenv("REMOTE_ADDR");
 		$sql = "UPDATE cart SET user_id = '$_SESSION[uid]' WHERE ip_add='$ip_add' AND user_id = -1";
 		if(mysqli_query($con,$sql)){
-			echo "register_success";
+			echo "Đăng kí thành công";
 			exit();
 		}
 	}

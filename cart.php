@@ -7,7 +7,7 @@ require "config/constants.php";
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Ecommerce</title>
+		<title>Cannabis Shop</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css"/>
 		<script src="js/jquery2.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -27,7 +27,7 @@ require "config/constants.php";
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand">Ecommerce</a>
+				<a href="#" class="navbar-brand">Cannabis Shop</a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
@@ -52,15 +52,15 @@ require "config/constants.php";
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
 				<div class="panel panel-primary">
-					<div class="panel-heading">Cart Checkout</div>
+					<div class="panel-heading">Thanh toán giỏ hàng</div>
 					<div class="panel-body">
 						<div class="row">
-							<div class="col-md-2 col-xs-2"><b>Action</b></div>
-							<div class="col-md-2 col-xs-2"><b>Product Image</b></div>
-							<div class="col-md-2 col-xs-2"><b>Product Name</b></div>
-							<div class="col-md-2 col-xs-2"><b>Quantity</b></div>
-							<div class="col-md-2 col-xs-2"><b>Product Price</b></div>
-							<div class="col-md-2 col-xs-2"><b>Price in <?php echo CURRENCY; ?></b></div>
+							<div class="col-md-2 col-xs-2"><b>  </b></div>
+							<div class="col-md-2 col-xs-2"><b>Hình ảnh</b></div>
+							<div class="col-md-2 col-xs-2"><b>Tên sản phẩm</b></div>
+							<div class="col-md-2 col-xs-2"><b>Số lượng</b></div>
+							<div class="col-md-2 col-xs-2"><b>Đơn giá</b></div>
+							<div class="col-md-2 col-xs-2"><b>Tổng <?php echo CURRENCY; ?></b></div>
 						</div>
 						<div id="cart_checkout"></div>
 						<!--<div class="row">

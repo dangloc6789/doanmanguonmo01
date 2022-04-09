@@ -7,7 +7,7 @@ if(isset($_POST["category"])){
 	$run_query = mysqli_query($con,$category_query) or die(mysqli_error($con));
 	echo "
 		<div class='nav nav-pills nav-stacked'>
-			<li class='active'><a href='#'><h4>Product Categories</h4></a></li>
+			<li class='active'><a href='#'><h4>Doanh mục</h4></a></li>
 	";
 	if(mysqli_num_rows($run_query) > 0){
 		while($row = mysqli_fetch_array($run_query)){
@@ -25,7 +25,7 @@ if(isset($_POST["brand"])){
 	$run_query = mysqli_query($con,$brand_query);
 	echo "
 		<div class='nav nav-pills nav-stacked'>
-			<li class='active'><a href='#'><h4>Brands</h4></a></li>
+			<li class='active'><a href='#'><h4>Nhãn hiệu</h4></a></li>
 	";
 	if(mysqli_num_rows($run_query) > 0){
 		while($row = mysqli_fetch_array($run_query)){
@@ -75,7 +75,7 @@ if(isset($_POST["getProduct"])){
 									<img src='product_images/$pro_image' style='width:220px; height:250px;'/>
 								</div>
 								<div class='panel-heading'>".CURRENCY.". $pro_price
-									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>Add To Cart</button>
+									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>Thêm vào giỏ hàng</button>
 								</div>
 							</div>
 						</div>	
@@ -111,7 +111,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 									<img src='product_images/$pro_image' style='width:220px; height:250px;'/>
 								</div>
 								<div class='panel-heading'>VND.$pro_price
-									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>Add To Cart</button>
+									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>Thêm vào giỏ hàng</button>
 								</div>
 							</div>
 						</div>	
@@ -138,7 +138,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 			echo "
 				<div class='alert alert-warning'>
 						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-						<b>Product is already added into the cart Continue Shopping..!</b>
+						<b>Sản phẩm đã có trong giỏ hàng, Tiếp tục mua sắm!</b>
 				</div>
 			";//not in video
 		} else {
@@ -149,7 +149,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 				echo "
 					<div class='alert alert-success'>
 						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-						<b>Product is Added..!</b>
+						<b>Đã thêm vào giỏ hàng!</b>
 					</div>
 				";
 			}
@@ -161,7 +161,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 				echo "
 					<div class='alert alert-warning'>
 							<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-							<b>Product is already added into the cart Continue Shopping..!</b>
+							<b>Sản phẩm đã có trong giỏ hàng, Tiếp tục mua sắm!</b>
 					</div>";
 					exit();
 			}
@@ -172,7 +172,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 				echo "
 					<div class='alert alert-success'>
 						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-						<b>Your product has been added to cart!</b>
+						<b>Đã thêm vào giỏ hàng!</b>
 					</div>
 				";
 				exit();
@@ -235,7 +235,7 @@ if (isset($_POST["Common"])) {
 				
 			}
 			?>
-				<a style="float:right;" href="cart.php" class="btn btn-warning">Edit&nbsp;&nbsp;<span class="glyphicon glyphicon-edit"></span></a>
+				<a style="float:right;" href="cart.php" class="btn btn-warning">Thanh toán</a>
 			<?php
 			exit();
 		}
@@ -278,7 +278,7 @@ if (isset($_POST["Common"])) {
 								<b class="net_total" style="font-size:20px;"> </b>
 					</div>';
 				if (!isset($_SESSION["uid"])) {
-					echo '<input type="submit" style="float:right;" name="login_user_with_product" class="btn btn-info btn-lg" value="Ready to Checkout" >
+					echo '<input type="submit" style="float:right;" name="login_user_with_product" class="btn btn-info btn-lg" value="Sẵn sàng thanh toán" >
 							</form>';
 					
 				}else if(isset($_SESSION["uid"])){
@@ -330,7 +330,7 @@ if (isset($_POST["removeItemFromCart"])) {
 	if(mysqli_query($con,$sql)){
 		echo "<div class='alert alert-danger'>
 						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-						<b>Product is removed from cart</b>
+						<b>Đã xoá sản phẩm khỏi giỏ hàng</b>
 				</div>";
 		exit();
 	}
@@ -349,7 +349,7 @@ if (isset($_POST["updateCartItem"])) {
 	if(mysqli_query($con,$sql)){
 		echo "<div class='alert alert-info'>
 						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-						<b>Product is updated</b>
+						<b>Sản phẩm đã được cập nhật</b>
 				</div>";
 		exit();
 	}
